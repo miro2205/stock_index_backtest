@@ -1,0 +1,12 @@
+# Ignore data and results
+data/
+results/
+visualizations/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore virtual environments
+venv/
+.env/
