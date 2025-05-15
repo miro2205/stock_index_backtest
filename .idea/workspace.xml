@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c77d54cb-0c5d-4ce0-80f6-2e768bdb2ac2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data_fetcher/yahoo_downloader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_fetcher/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strategies/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strategies/weekend_reversal.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_weekend_reversal.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_yahoo_downloader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -40,12 +45,16 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2wNAgVjqEUgGhwfA2wt6odRomZi" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests in test_yahoo_downloader.py.executor": "Run",
     "Python.main.executor": "Run",
     "Python.yahoo_downloader.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -77,7 +86,11 @@
       <option name="presentableId" value="Default" />
       <updated>1745871768177</updated>
       <workItem from="1746047908304" duration="645000" />
-      <workItem from="1746123694716" duration="2877000" />
+      <workItem from="1746123694716" duration="5387000" />
+      <workItem from="1746432116280" duration="1321000" />
+      <workItem from="1746556934910" duration="3907000" />
+      <workItem from="1746786838212" duration="1162000" />
+      <workItem from="1747293889521" duration="2598000" />
     </task>
     <task id="LOCAL-00001" summary="Initial project setup: structure, .gitignore, README">
       <option name="closed" value="true" />
@@ -118,6 +131,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update README with project goals" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/stock_index_backtest$main.coverage" NAME="main Coverage Results" MODIFIED="1747295691111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stock_index_backtest$yahoo_downloader.coverage" NAME="yahoo_downloader Coverage Results" MODIFIED="1746126095561" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_fetcher" />
   </component>
 </project>
