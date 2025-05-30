@@ -1,24 +1,22 @@
 import pandas as pd
 
-def generate_weekend_reversal_signals(data_universe: pd.DataFrame) -> pd.DataFrame:
-    """
-    Add a 'Signal' column to the DataFrame.
-    Buy on Monday close if the previous Friday had a drop of 3% or more.
-    """
-    data_universe = data_universe.copy()
-    data_universe["Weekday"] = data_universe.index.dayofweek
-    data_universe["Daily Return"] = data_universe["Close"].pct_change()
+def generate_weekend_reversal_signals(data: pd.DataFrame) -> pd.DataFrame:
+    # Copy the input DataFrame to avoid modifying the original
+    data = data.copy()
 
-    # Find Fridays with big drops
-    data_universe["Big Friday Drop"] = (
-        (data_universe["Weekday"] == 4) & (data_universe["Daily Return"] <= -0.03)
-    )
+    # Add a column to track the weekday (0 = Monday, 4 = Friday)
+    data["Weekday"] = data.index.dayofweek
 
-    # Buy Monday if Friday had a big drop
-    data_universe["Signal"] = 0
-    data_universe.loc[
-        data_universe["Big Friday Drop"].shift(1) & (data_universe["Weekday"] == 0),
-        "Signal"
-    ] = 1
+    # Calculate the daily percentage return
+    data["Daily Return"] = data["Close"].pct_change()
 
-    return data_universe
+    # Identify Fridays with a large drop (e.g., more than -1%)
+    data["Big Friday Drop"] = (data["Weekday"] == 4) & (data["Daily Return"] <= -0.01)
+
+    # Initialize signal column to 0 (no trade)
+    data["Signal"] = 0
+
+    # Generate buy signal on the Monday following a big Friday drop
+    data.loc[(data["Big Friday Drop"].shift(1)) & (data["Weekday"] == 0), "Signal"] = 1
+
+    return data
